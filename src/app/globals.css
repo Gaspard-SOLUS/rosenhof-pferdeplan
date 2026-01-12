@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  font-family: var(--font-body);
 }
 
 @theme inline {
@@ -10,6 +11,39 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-paper shadow-soft;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-bark px-4 py-2 text-sm font-medium text-white transition hover:bg-bark/90;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-line bg-paper px-4 py-2 text-sm transition hover:bg-sand;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-paper px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-bordeaux/30;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border border-line bg-sand px-2.5 py-1 text-xs font-medium text-ink/80;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +54,21 @@
 }
 
 body {
-  background: var(--background);
+  background: #F6F1E7;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@theme {
+  --color-sand: #F6F1E7;
+  --color-paper: #FFFFFF;
+  --color-ink: #1C1B18;
+  --color-line: #E7E0D4;
+
+  --color-bark: #3A241A;
+  --color-bordeaux: #6B1F2A;
+  --color-moss: #2F4A3A;
+
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
+  --radius-xl2: 1.25rem;
 }
