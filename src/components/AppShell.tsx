@@ -51,7 +51,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
           collapsed ? "pl-20" : "pl-72",
         ].join(" ")}
       >
-        <header className="sticky top-0 z-20 border-b border-line bg-white/95 bg-paper/95 backdrop-blur">
+        <header className="sticky top-0 z-20 border-b border-line bg-paper/95 backdrop-blur">
           <div className="h-1 w-full bg-bordeaux/90" />
           <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
             <div>
